@@ -35,7 +35,7 @@ function Header() {
                 className=" dark:text-white md:dark:text-blue-500 block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 sm:text-black"
                 aria-current="page"
               >
-                Home
+                Homes
               </Link>
             </li>
             <li>
