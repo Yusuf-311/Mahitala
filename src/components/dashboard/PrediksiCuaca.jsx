@@ -9,9 +9,9 @@ import PergerakaAwan from "../../assets/Icon/pergerakan-awan.png";
 const PrediksiCuaca = () => {
   return (
     <>
-      <div className="flex gap-10">
-        <div className="container w-2/3 p-6 mt-2 border border-black shadow-lg rounded-3xl ">
-          <div className="flex flex-row justify-between">
+      <div className="flex gap-20">
+        <div className="container w-2/3 p-10 mt-2 border border-black shadow-lg rounded-3xl ">
+          <div className="flex flex-row justify-between mb-10">
             <div className="basis-3/4">
               {" "}
               <p>Sleman, Daerah Istimewa Yogyakarta</p>
@@ -22,7 +22,7 @@ const PrediksiCuaca = () => {
             </div>
           </div>
           <div className="flex flex-row ">
-            <div className="text-center align-middle basis-1/2 md:basis-1/2">
+            <div className="space-y-3 text-center align-middle basis-1/2 md:basis-1/2">
               <p className="text-[#6C7D41]">
                 {" "}
                 <span className="font-semibold text-9xl ">17 </span>
@@ -31,26 +31,26 @@ const PrediksiCuaca = () => {
               <p className="font-normal">Sebagian Cerah</p>
             </div>
 
-            <div className="text-white align-middle p-5 pb-0 basis-1/2 md:basis-1/2 bg-[#6C7D41] rounded-3xl">
-              <p>Perkiraan Cuaca Hari Ini</p>
+            <div className="text-white align-middle p-5 pb-5 basis-1/2 md:basis-1/2 bg-[#6C7D41] rounded-3xl">
+              <p className="mb-5">Perkiraan Cuaca Hari Ini</p>
 
-              <div className="flex flex-row">
-                <div className="text-center basis-1/4">
+              <div className="flex gap-1">
+                <div className="space-y-3 text-center basis-1/4">
                   <img src={Hujan} className="mx-auto w-11" alt="" />
                   <p className="text-white">Pagi</p>
                   <p className="text-white">17</p>
                 </div>
-                <div className="text-center basis-1/4">
+                <div className="space-y-3 text-center basis-1/4">
                   <img src={CerahBerawan} className="mx-auto w-11 " alt="" />
                   <p className="text-white">Siang</p>
                   <p className="text-white">17</p>
                 </div>
-                <div className="text-center basis-1/4">
+                <div className="space-y-3 text-center basis-1/4">
                   <img src={Berawan} className="mx-auto w-11 " alt="" />
                   <p className="text-white">Sore</p>
                   <p className="text-white">17</p>
                 </div>
-                <div className="text-center basis-1/4">
+                <div className="space-y-3 text-center basis-1/4">
                   <img src={Hujan} className="mx-auto w-11 " alt="" />
                   <p className="text-white">Malam</p>
                   <p className="text-white">17</p>
@@ -73,7 +73,7 @@ const PrediksiCuaca = () => {
             </div>
           </div>
         </div>
-        <div className="container w-1/3 p-6 mt-2 border border-black shadow-lg rounded-3xl">
+        <div className="container w-1/3 p-10 mt-2 border border-black shadow-lg rounded-3xl">
           <p>
             Tanaman yang cocok ditanam periode ini adalah padi. Kami
             merekomendasikan Anda untuk mempertimbangkannya dalam proses
@@ -82,7 +82,7 @@ const PrediksiCuaca = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-10">
+      <div className="flex gap-20">
         <div className="grid w-2/3 grid-cols-2 gap-4 mt-10">
           <div className="flex items-center gap-3 p-8 border border-black rounded-3xl">
             <div className="text-center basis-3/4">
@@ -145,7 +145,7 @@ const PrediksiCuaca = () => {
             </div>
           </div>
         </div>
-        <div className="container w-1/3 p-6 mt-2 mt-10 border border-black shadow-lg rounded-3xl"></div>
+        <div className="container w-1/3 p-6 mt-10 border border-black shadow-lg rounded-3xl"></div>
       </div>
     </>
   );
