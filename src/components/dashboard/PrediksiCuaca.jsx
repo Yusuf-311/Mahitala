@@ -84,7 +84,7 @@ const PrediksiCuaca = () => {
       </div>
       <div className="flex gap-20">
         <div className="grid w-2/3 grid-cols-2 gap-4 mt-10">
-          <div className="flex items-center gap-3 p-8 border border-black rounded-3xl">
+          <div className="flex items-center gap-2 p-8 border border-black rounded-3xl">
             <div className="text-center basis-3/4">
               <img src={PergerakaAwan} className="w-16 mx-auto" alt="" />
               <p className="text-[#6C7D41]">26</p>
