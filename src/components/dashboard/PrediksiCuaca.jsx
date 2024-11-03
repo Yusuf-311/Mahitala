@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Hujan from "../../assets/Icon/Hujan.png";
 import Angin from "../../assets/Icon/Angin.png";
 import Airdrop from "../../assets/Icon/Airdrop.png";
@@ -6,32 +5,10 @@ import Berawan from "../../assets/Icon/Berawan.png";
 import CerahBerawan from "../../assets/Icon/Cerah-berawan.png";
 import Strip from "../../assets/Icon/Strip-3.png";
 import SubPrediksi from "./SubComponent/SubPrediksi";
+import useCurrentDate from "../../hooks/useCurrentDate";
 
 const PrediksiCuaca = () => {
-  const [time, setTime] = useState("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const hours = now.getHours().toString().padStart(2, "0");
-      const minutes = now.getMinutes().toString().padStart(2, "0");
-      setTime(`${hours}:${minutes}`);
-    };
-
-    updateTime(); // Call updateTime initially to set the time right away
-    const intervalId = setInterval(updateTime, 1000); // Update the time every second
-
-    return () => clearInterval(intervalId); // Clear the interval when the component unmounts
-  }, []);
-
-  // Mendapatkan tanggal saat ini
-  const currentDate = new Date();
-
-  // Mengambil hari, bulan, dan tahun
-  const day = currentDate.toLocaleString("id-ID", { weekday: "long" }); // Nama hari
-  const date = currentDate.getDate(); // Tanggal
-  const month = currentDate.toLocaleString("id-ID", { month: "long" }); // Nama bulan
-  const year = currentDate.getFullYear(); // Tahun
+  const { time, dateInfo } = useCurrentDate();
 
   return (
     <>
@@ -42,7 +19,7 @@ const PrediksiCuaca = () => {
               {" "}
               <p>Sleman, Daerah Istimewa Yogyakarta</p>
               <p>
-                {day}, {date} {month} {year}
+                {dateInfo.day}, {dateInfo.date} {dateInfo.month} {dateInfo.year}
               </p>
             </div>
             <div className="basis-1/4">
