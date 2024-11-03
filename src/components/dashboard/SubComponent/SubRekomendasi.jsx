@@ -2,7 +2,7 @@
 
 const Rekomendasi = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { images, status, nilai } = props;
+  const { images, status, nilai, idealitas } = props;
   return (
     <div className="flex items-center self-center mt-5 gap-7">
       <div>
@@ -11,9 +11,9 @@ const Rekomendasi = (props) => {
       <div>
         <div className="flex gap-3">
           <h4 className="text-[#6C7D41] font-semibold">{status}</h4>
-          <p>Ideal</p>
+          <p>{idealitas}</p>
         </div>
-        <p>
+        <p className="text-[12px]">
           Rata-rata bulanan {status} di lokasi Anda saat ini adalah {nilai}{" "}
         </p>
       </div>
