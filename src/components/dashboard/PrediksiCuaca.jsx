@@ -9,7 +9,6 @@ import SubPrediksi from "./SubComponent/SubPrediksi";
 
 const PrediksiCuaca = () => {
   const [time, setTime] = useState("");
-  const [location, setLocation] = useState("Getting location...");
 
   useEffect(() => {
     const updateTime = () => {
@@ -25,25 +24,15 @@ const PrediksiCuaca = () => {
     return () => clearInterval(intervalId); // Clear the interval when the component unmounts
   }, []);
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          // Optional: Fetch city/region name with latitude and longitude
-          setLocation(
-            `Lat: ${latitude.toFixed(2)}, Lon: ${longitude.toFixed(2)}`
-          );
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-          setLocation("Location unavailable");
-        }
-      );
-    } else {
-      setLocation("Geolocation not supported by your browser.");
-    }
-  }, []);
+  // Mendapatkan tanggal saat ini
+  const currentDate = new Date();
+
+  // Mengambil hari, bulan, dan tahun
+  const day = currentDate.toLocaleString("id-ID", { weekday: "long" }); // Nama hari
+  const date = currentDate.getDate(); // Tanggal
+  const month = currentDate.toLocaleString("id-ID", { month: "long" }); // Nama bulan
+  const year = currentDate.getFullYear(); // Tahun
+
   return (
     <>
       <div className="w-2/3 p-10 mt-2 border border-black shadow-lg rounded-3xl">
@@ -51,8 +40,10 @@ const PrediksiCuaca = () => {
           <div className="flex flex-row justify-between mb-10">
             <div className="basis-3/4">
               {" "}
-              <p>Sleman, Daerah Istimewa Yogyakarta {location}</p>
-              <p>Rabu, 23 Oktober 2024</p>
+              <p>Sleman, Daerah Istimewa Yogyakarta</p>
+              <p>
+                {day}, {date} {month} {year}
+              </p>
             </div>
             <div className="basis-1/4">
               <p className="text-end">Hari Ini {time} WIB</p>
