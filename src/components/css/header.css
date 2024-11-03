@@ -8,11 +8,3 @@ h6,
 p {
   font-family: "Poppins", serif !important;
 }
-
-.bg-main-mahitala {
-  background: #383a2e;
-}
-
-.bg-sec-mahitala:hover {
-  background: #6c7d41;
-}

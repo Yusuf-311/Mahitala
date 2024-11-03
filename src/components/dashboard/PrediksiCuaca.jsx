@@ -1,60 +1,80 @@
+import { useState, useEffect } from "react";
 import Hujan from "../../assets/Icon/Hujan.png";
 import Angin from "../../assets/Icon/Angin.png";
 import Airdrop from "../../assets/Icon/Airdrop.png";
 import Berawan from "../../assets/Icon/Berawan.png";
 import CerahBerawan from "../../assets/Icon/Cerah-berawan.png";
 import Strip from "../../assets/Icon/Strip-3.png";
-import PergerakaAwan from "../../assets/Icon/pergerakan-awan.png";
+import SubPrediksi from "./SubComponent/SubPrediksi";
 
 const PrediksiCuaca = () => {
+  const [time, setTime] = useState("");
+  const [location, setLocation] = useState("Getting location...");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      setTime(`${hours}:${minutes}`);
+    };
+
+    updateTime(); // Call updateTime initially to set the time right away
+    const intervalId = setInterval(updateTime, 1000); // Update the time every second
+
+    return () => clearInterval(intervalId); // Clear the interval when the component unmounts
+  }, []);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          // Optional: Fetch city/region name with latitude and longitude
+          setLocation(
+            `Lat: ${latitude.toFixed(2)}, Lon: ${longitude.toFixed(2)}`
+          );
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+          setLocation("Location unavailable");
+        }
+      );
+    } else {
+      setLocation("Geolocation not supported by your browser.");
+    }
+  }, []);
   return (
     <>
-      <div className="flex gap-20">
-        <div className="container w-2/3 p-10 mt-2 border border-black shadow-lg rounded-3xl ">
+      <div className="w-2/3 p-10 mt-2 border border-black shadow-lg rounded-3xl">
+        <div className="space-y-12">
           <div className="flex flex-row justify-between mb-10">
             <div className="basis-3/4">
               {" "}
-              <p>Sleman, Daerah Istimewa Yogyakarta</p>
+              <p>Sleman, Daerah Istimewa Yogyakarta {location}</p>
               <p>Rabu, 23 Oktober 2024</p>
             </div>
             <div className="basis-1/4">
-              <p className="text-end">Hari Ini 00.09 WIB</p>
+              <p className="text-end">Hari Ini {time} WIB</p>
             </div>
           </div>
           <div className="flex flex-row ">
-            <div className="space-y-3 text-center align-middle basis-1/2 md:basis-1/2">
-              <p className="text-[#6C7D41]">
-                {" "}
-                <span className="font-semibold text-9xl ">17 </span>
-              </p>
+            <div className="text-center align-middle basis-1/2 md:basis-1/2">
+              <p className="text-[#6C7D41] font-semibold text-[128px]"> 17° </p>
 
               <p className="font-normal">Sebagian Cerah</p>
             </div>
 
-            <div className="text-white align-middle p-5 pb-5 basis-1/2 md:basis-1/2 bg-[#6C7D41] rounded-3xl">
+            <div className="text-white self-center align-middle p-10  basis-1/2 md:basis-1/2 bg-[#6C7D41] rounded-3xl">
               <p className="mb-5">Perkiraan Cuaca Hari Ini</p>
 
-              <div className="flex gap-1">
-                <div className="space-y-3 text-center basis-1/4">
-                  <img src={Hujan} className="mx-auto w-11" alt="" />
-                  <p className="text-white">Pagi</p>
-                  <p className="text-white">17</p>
-                </div>
-                <div className="space-y-3 text-center basis-1/4">
-                  <img src={CerahBerawan} className="mx-auto w-11 " alt="" />
-                  <p className="text-white">Siang</p>
-                  <p className="text-white">17</p>
-                </div>
-                <div className="space-y-3 text-center basis-1/4">
-                  <img src={Berawan} className="mx-auto w-11 " alt="" />
-                  <p className="text-white">Sore</p>
-                  <p className="text-white">17</p>
-                </div>
-                <div className="space-y-3 text-center basis-1/4">
-                  <img src={Hujan} className="mx-auto w-11 " alt="" />
-                  <p className="text-white">Malam</p>
-                  <p className="text-white">17</p>
-                </div>
+              {/* SubPrediksi */}
+
+              <div className="flex ">
+                <SubPrediksi images={Hujan} waktu="Pagi" suhu="17°" />
+                <SubPrediksi images={CerahBerawan} waktu="Siang" suhu="17°" />
+                <SubPrediksi images={Berawan} waktu="Sore" suhu="17°" />
+                <SubPrediksi images={Hujan} waktu="Malam" suhu="17°" />
               </div>
             </div>
           </div>
@@ -73,79 +93,6 @@ const PrediksiCuaca = () => {
             </div>
           </div>
         </div>
-        <div className="container w-1/3 p-10 mt-2 border border-black shadow-lg rounded-3xl">
-          <p>
-            Tanaman yang cocok ditanam periode ini adalah padi. Kami
-            merekomendasikan Anda untuk mempertimbangkannya dalam proses
-            penanaman. Pastikan Anda melakukan pengecekan kondisi tanah sebelum
-            melanjutkan kegiatan penanaman.
-          </p>
-        </div>
-      </div>
-      <div className="flex gap-20">
-        <div className="grid w-2/3 grid-cols-2 gap-4 mt-10">
-          <div className="flex items-center gap-2 p-8 border border-black rounded-3xl">
-            <div className="text-center basis-3/4">
-              <img src={PergerakaAwan} className="w-16 mx-auto" alt="" />
-              <p className="text-[#6C7D41]">26</p>
-              <p>Suhu Udara</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Pergerakan Awan :</h4>
-              <p className="text-[12px]">
-                Awan bergerak dari arah barat laut menuju timur laut dengan
-                kecepatan sedang. Diperkirakan tidak ada hujan lebat di wilayah
-                ini hari ini.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 p-8 border border-black rounded-3xl">
-            <div className="text-center basis-3/4">
-              <img src={PergerakaAwan} className="w-16 mx-auto" alt="" />
-              <p className="text-[#6C7D41]">26</p>
-              <p>Suhu Udara</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Pergerakan Awan :</h4>
-              <p className="text-[12px]">
-                Awan bergerak dari arah barat laut menuju timur laut dengan
-                kecepatan sedang. Diperkirakan tidak ada hujan lebat di wilayah
-                ini hari ini.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 p-8 border border-black rounded-3xl">
-            <div className="text-center basis-3/4">
-              <img src={PergerakaAwan} className="w-16 mx-auto" alt="" />
-              <p className="text-[#6C7D41]">26</p>
-              <p>Suhu Udara</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Pergerakan Awan :</h4>
-              <p className="text-[12px]">
-                Awan bergerak dari arah barat laut menuju timur laut dengan
-                kecepatan sedang. Diperkirakan tidak ada hujan lebat di wilayah
-                ini hari ini.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 p-8 border border-black rounded-3xl">
-            <div className="text-center basis-3/4">
-              <img src={PergerakaAwan} className="w-16 mx-auto" alt="" />
-              <p className="text-[#6C7D41]">26</p>
-              <p>Suhu Udara</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Pergerakan Awan :</h4>
-              <p className="text-[12px]">
-                Awan bergerak dari arah barat laut menuju timur laut dengan
-                kecepatan sedang. Diperkirakan tidak ada hujan lebat di wilayah
-                ini hari ini.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="container w-1/3 p-6 mt-10 border border-black shadow-lg rounded-3xl"></div>
       </div>
     </>
   );
