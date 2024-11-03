@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 
 import "./css/header.css";
-import logo from "../assets/Logo/logo-mahitala.png";
+import logo from "../assets/Logo/Mahitala.png";
 
 const Header = () => {
   return (
     <nav className="px-5 border-gray-200 shadow-lg dark:bg-gray-900 bg-[#383A2E]">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={logo} className="h-8" alt="Mahitala" />
+          <img src={logo} className="w-40" alt="Mahitala" />
         </a>
         <button
           data-collapse-toggle="navbar-default"

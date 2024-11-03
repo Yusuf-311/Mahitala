@@ -1,4 +1,5 @@
 import PrediksiCuaca from "../components/dashboard/PrediksiCuaca";
+import PrediksiKedepan from "../components/dashboard/PrediksiKedepan";
 import RekomendasiAI from "../components/dashboard/RekomendasiAI";
 import StatusCuaca from "../components/dashboard/StatusCuaca";
 
@@ -13,8 +14,12 @@ const Home = () => {
         </div>
 
         <div className="flex gap-20">
-          <StatusCuaca />
-          <div className="container w-1/3 p-10 mt-2 border border-black shadow-lg rounded-3xl "></div>
+          <div className="grid w-2/3 grid-cols-2 gap-4 mt-10">
+            <StatusCuaca />
+          </div>
+          <div className="container w-1/3 p-10 mt-10 border border-black shadow-lg rounded-3xl ">
+            <PrediksiKedepan />
+          </div>
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Header from "./components/Header";
 import ForumDiskusi from "./pages/ForumDiskusi";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/forum-diskusi" element={<ForumDiskusi />} />
       </Routes>
+      <Footer />
     </>
   );
 }
