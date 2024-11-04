@@ -27,7 +27,7 @@ const PrediksiCuaca = () => {
         </div>
         <div className="flex flex-row ">
           <div className="text-center align-middle basis-1/2 md:basis-1/2">
-            <p className="text-[#6C7D41] font-semibold text-[128px]"> 17° </p>
+            <p className="text-[#545f39] font-semibold text-[128px]"> 17° </p>
 
             <p className="font-normal">Sebagian Cerah</p>
           </div>
