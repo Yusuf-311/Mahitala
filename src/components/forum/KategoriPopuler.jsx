@@ -1,7 +1,7 @@
 const KategoriPopuler = () => {
   return (
     <div className="flex">
-      <div>
+      <div className="">
         <img src="" alt="" />
         <p>Prediksi Cuaca Mingguan</p>
       </div>
