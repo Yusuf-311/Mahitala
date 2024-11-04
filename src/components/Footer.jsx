@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#383A2E] p-10 mt-11 sticky ">
+      <footer className="bg-[#383A2E] p-10  sticky ">
         <div className="flex items-center justify-between">
           <div>
             <img src={logo} className="w-60" alt="" />

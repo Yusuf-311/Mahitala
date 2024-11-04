@@ -12,30 +12,10 @@ const PrediksiKedepan = () => {
         </div>
         <div className="overflow-x-auto scrollbar-hidden">
           <div className="flex gap-4 mt-5 w-\ whitespace-nowrap">
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
           </div>
         </div>
         <div className="flex items-center gap-4 mt-5 align-middle">
@@ -44,30 +24,10 @@ const PrediksiKedepan = () => {
         </div>
         <div className="overflow-x-auto scrollbar-hidden">
           <div className="flex gap-4 mt-5 whitespace-nowrap">
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
-            <SubPrediksiKedepan
-              jam="09.00"
-              images={Berawan}
-              suhu="19° "
-              warna="bg-[#6C7D41]"
-            />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
+            <SubPrediksiKedepan jam="09.00" images={Berawan} suhu="19° " />
           </div>
         </div>
       </div>
