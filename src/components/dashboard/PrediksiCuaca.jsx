@@ -32,7 +32,7 @@ const PrediksiCuaca = () => {
             <p className="font-normal">Sebagian Cerah</p>
           </div>
 
-          <div className="text-white self-center align-middle p-5  basis-1/2 md:basis-1/2 bg-[#6C7D41] rounded-3xl">
+          <div className="text-white self-center align-middle p-5  basis-1/2 md:basis-1/2 bg-[#545f39] rounded-3xl">
             <p className="mb-5">Perkiraan Cuaca Hari Ini</p>
 
             {/* SubPrediksi */}
