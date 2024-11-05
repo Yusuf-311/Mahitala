@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <div className="flex gap-10 p-5 py-7 hero-background">
-        <div className="w-3/5 p-6 rounded-3xl bg-[#BAAD8A]">
+        <div className="w-3/5 p-6 rounded-3xl bg-[#BAAD8A] bg-opacity-85">
           <h1 className="font-bold">Cuaca Hari Ini</h1>{" "}
           <div className="p-8 mt-2 bg-white border border-black shadow-lg rounded-3xl">
             <PrediksiCuaca />
@@ -18,7 +18,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="w-2/5 p-6 rounded-3xl bg-[#BAAD8A]">
+        <div className="w-2/5 p-6 rounded-3xl bg-[#BAAD8A] bg-opacity-85">
           <h1 className="font-bold">Rekomendasi AI</h1>
           <div className="p-8 mt-2 bg-white border border-black shadow-lg rounded-3xl">
             <RekomendasiAI />

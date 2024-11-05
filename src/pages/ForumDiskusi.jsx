@@ -1,3 +1,6 @@
+import DiskusiTeratas from "../components/forum/DiskusiTeratas";
+import KategoriPopuler from "../components/forum/KategoriPopuler";
+
 const ForumDiskusi = () => {
   return (
     <>
@@ -38,12 +41,34 @@ const ForumDiskusi = () => {
           </div>
         </div>
         <hr className="mt-7" />
-      </div>
-      <div className="">
-        {" "}
-        <h1 className="font-bold">Kategori Populer</h1>
-        <div className="w-3/5 p-6 rounded-3xl"></div>
-      </div>
+
+        <div className="flex gap-8">
+          <div className="w-3/5 ">
+            {" "}
+            <h1 className="my-3 font-bold text-[#6C7D41] text-[24px]">
+              Kategori Populer
+            </h1>
+            <div>
+              <KategoriPopuler />
+            </div>
+            <hr className="mt-7" />
+            <h1 className="my-3 font-bold text-[#6C7D41] text-[24px]">
+              Diskusi Teratas
+            </h1>
+            <div>
+              <DiskusiTeratas />
+            </div>
+          </div>
+          <div className="w-2/5">
+            <h1 className="my-3 font-bold text-[#6C7D41] text-[24px]">
+              Diskusi Populer
+            </h1>
+            <div className="w-3/5 ">
+              <ForumDiskusi />
+            </div>
+          </div>
+        </div>
+      </div>{" "}
     </>
   );
 };
