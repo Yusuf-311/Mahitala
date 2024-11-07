@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import ForumDiskusi from "./pages/ForumDiskusi";
 import Footer from "./components/Footer";
 
+import DiskusiTeratasMain from "./pages/DiskusiTeratasMain";
+
 function App() {
   return (
     <>
@@ -14,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/forum-diskusi" element={<ForumDiskusi />} />
+        <Route path="/diskusi-terakhir" element={<DiskusiTeratasMain />} />
       </Routes>
       <Footer />
     </>

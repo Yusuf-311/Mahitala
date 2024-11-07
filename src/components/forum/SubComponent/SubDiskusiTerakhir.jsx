@@ -1,4 +1,4 @@
-const SubDiskusiPopuler = (props) => {
+const SubDiskusiTerakhir = (props) => {
   // eslint-disable-next-line react/prop-types
   const { images, judul, content } = props;
   return (
@@ -20,4 +20,4 @@ const SubDiskusiPopuler = (props) => {
   );
 };
 
-export default SubDiskusiPopuler;
+export default SubDiskusiTerakhir;

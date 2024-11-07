@@ -5,10 +5,10 @@ const SubKategoriDiskusiTeratas = (props) => {
     <>
       <a
         href="#"
-        className="block p-6 space-y-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        className="block p-6 space-y-3 bg-[#E9ECE3] border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
-        <div className="flex justify-between">
-          <div className="flex items-center gap-3">
+        <div className="justify-between ">
+          <div className="flex items-center gap-3 lg:flex sm:block">
             <img
               className="rounded-full w-9 h-9"
               src={images}
@@ -19,7 +19,7 @@ const SubKategoriDiskusiTeratas = (props) => {
               Oleh <span className="text-[#6C7D41] font-semibold">{nama}</span>
             </p>
           </div>
-          <div>
+          <div className="ps-12">
             <p className="text-[#6C7D41] ">Rabu, 23 Oktober 2024, 5:21 WIB</p>
           </div>
         </div>

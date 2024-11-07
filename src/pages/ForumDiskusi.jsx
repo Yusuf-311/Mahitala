@@ -1,3 +1,5 @@
+import DiskusiPopuler from "../components/forum/DiskusiPopuler";
+import DiskusiTerakhir from "../components/forum/DiskusiTerakhir";
 import DiskusiTeratas from "../components/forum/DiskusiTeratas";
 import KategoriPopuler from "../components/forum/KategoriPopuler";
 
@@ -6,6 +8,7 @@ const ForumDiskusi = () => {
     <>
       <div className="p-10">
         <div className="flex justify-between">
+          <p className="w-8 my-auto text-lg">{"< Kembali"} </p>
           <form className="w-2/4">
             <div className="mt-2">
               <div className="flex space-x-3 rounded-md sm:max-w-md">
@@ -26,18 +29,22 @@ const ForumDiskusi = () => {
           </form>
           <div className="space-x-3">
             {" "}
-            <button
-              type="submit"
-              className="bg-[#6C7D41] px-3 py-2 rounded-lg text-white"
-            >
-              Buat Diskusi
-            </button>
-            <button
-              type="submit"
-              className="bg-[#6C7D41] px-3 py-2 rounded-lg text-white"
-            >
-              Diskusi terakhir
-            </button>
+            <a href="/buat-diskusi">
+              <button
+                type="submit"
+                className="bg-[#6C7D41] px-3 py-2 rounded-lg text-white"
+              >
+                Buat Diskusi
+              </button>
+            </a>
+            <a href="/diskusi-terakhir">
+              <button
+                type="submit"
+                className="bg-[#6C7D41] px-3 py-2 rounded-lg text-white"
+              >
+                Diskusi terakhir
+              </button>
+            </a>
           </div>
         </div>
         <hr className="mt-7" />
@@ -63,8 +70,15 @@ const ForumDiskusi = () => {
             <h1 className="my-3 font-bold text-[#6C7D41] text-[24px]">
               Diskusi Populer
             </h1>
-            <div className="w-3/5 ">
-              <ForumDiskusi />
+            <div>
+              <DiskusiPopuler />
+            </div>
+            <hr className="mt-7" />
+            <h1 className="my-3 font-bold text-[#6C7D41] text-[24px]">
+              Diskusi Terkini
+            </h1>
+            <div>
+              <DiskusiTerakhir />
             </div>
           </div>
         </div>
