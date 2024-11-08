@@ -7,11 +7,13 @@ import ForumDiskusi from "./pages/ForumDiskusi";
 import Footer from "./components/Footer";
 
 import DiskusiTeratasMain from "./pages/DiskusiTeratasMain";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

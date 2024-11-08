@@ -10,7 +10,7 @@ const SubStatusCuaca = (props) => {
           <p className="text-[#6C7D41] mt-1 lg:text-[12px] text-[9px]">
             {nilai}
           </p>
-          <p className="lg:text-[12px] text-[9px]">{status}</p>
+          <p className="lg:text-[10px] text-[9px]">{status}</p>
         </div>
         <div className="w-3/4">
           <h4 className="font-medium lg:text-[12px] text-[10px]">
