@@ -6,7 +6,7 @@ import Rekomendasi from "./SubComponent/SubRekomendasi";
 const RekomendasiAI = () => {
   return (
     <>
-      <p className="text-[12px]">
+      <p className="lg:text-[12px] text-[10px] text-justify">
         Tanaman yang cocok ditanam periode ini adalah padi. Kami
         merekomendasikan Anda untuk mempertimbangkannya dalam proses penanaman.
         Pastikan Anda melakukan pengecekan kondisi tanah sebelum melanjutkan
