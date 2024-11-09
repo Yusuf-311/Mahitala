@@ -4,7 +4,7 @@ const About = () => {
   return (
     <>
       <div
-        className="py-32 space-y-2 text-center text-white "
+        className="p-5 py-24 space-y-2 text-center text-white lg:py-32"
         style={{
           backgroundImage: `url(${Solusi})`,
           backgroundSize: "cover",
@@ -21,7 +21,7 @@ const About = () => {
           perubahan <br /> cuaca ekstrem.
         </p>
       </div>
-      <div className="text-center">
+      <div className="text-center ">
         <h4 className="text-center text-[24px] font-bold my-5 ">
           Fitur Unggulan
         </h4>
