@@ -7,8 +7,8 @@ const ForumDiskusi = () => {
   return (
     <>
       <div className="p-10">
-        <div className="flex justify-between">
-          <p className="w-8 my-auto text-lg">{"< Kembali"} </p>
+        <div className="justify-between lg:flex">
+          <p className="w-24 my-auto text-lg">{"< Kembali"} </p>
           <form className="w-2/4">
             <div className="mt-2">
               <div className="flex space-x-3 rounded-md sm:max-w-md">
