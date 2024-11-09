@@ -62,7 +62,7 @@ const Header = () => {
               </li>
               <li className="border border-s-0 hover:bg-[#6c7d41]">
                 <NavLink
-                  to="/about"
+                  to="/tentang-kami"
                   className={({ isActive }) =>
                     `block px-20 text-xl text-white py-7 ${isActive ? "bg-[#6c7d41]" : ""}`
                   }
